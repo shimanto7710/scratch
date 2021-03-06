@@ -3,6 +3,8 @@ package com.example.scratch.utls
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
+import android.graphics.Color
+import android.os.Build
 import android.provider.Settings
 import android.text.TextUtils
 import android.view.View
@@ -74,7 +76,8 @@ object AppUtils {
     fun isValidPhoneNumber(number: String?): Boolean {
         return if (number != null && number != "" && number.length < 11 && number.length > 9 && TextUtils.isDigitsOnly(
                 "0123456789"
-            )) {
+            )
+        ) {
             true
         } else false
     }
@@ -82,7 +85,8 @@ object AppUtils {
     fun isValidOTP(number: String?): Boolean {
         return if (number != null && number != "" && number.length < 5 && number.length > 3 && TextUtils.isDigitsOnly(
                 "0123456789"
-            )) {
+            )
+        ) {
             true
         } else false
     }
@@ -101,15 +105,24 @@ object AppUtils {
             return st
     }
 
-    fun getBracketText(value : String) : String{
-        return "("+value+")"
+    fun getBracketText(value: String): String {
+        return "(" + value + ")"
     }
 
-    fun Bullet(){
+    fun Bullet() {
 //        val tv = findViewById(R.id.textView1) as TextView
 //        val circle = "\u25CF"
 //        val sentence = "$circle  Hello its me\n"
 //        tv.text = sentence
     }
+
+//    fun whiteNotificationBar(view: View) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            var flags: Int = view.getSystemUiVisibility()
+//            flags = flags or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//            view.setSystemUiVisibility(flags)
+//            window.statusBarColor = Color.WHITE
+//        }
+//    }
 
 }
